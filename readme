@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Toggle</title>
+    <style>
+        .toggle-button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: lightgray;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            }
+        .toggle-button.active {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="button1" class="toggle-button" onclick="activateButton('button1')">Button 1</button>
+    <button id="button2" class="toggle-button" onclick="activateButton('button2')">Button 2</button>
+
+    <script>
+        function activateButton(buttonId) {
+        const buttons = document.querySelectorAll('.toggle-button');
+        buttons.forEach(button => {
+            button.classList.remove('active');
+        });
+        const activeButton = document.getElementById(buttonId);
+        activeButton.classList.add('active');
+        }
+    </script>
+</body>
+</html>

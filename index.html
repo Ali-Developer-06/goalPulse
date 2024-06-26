@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Images/logo.png">
+
+    <!--* Mix Links  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Goal Pulse - Home</title>
+</head>
+<body>
+
+    <!--* ========== Navbar Section ========== -->
+
+    <section class="navbar">
+        <div class="timePlusLogo">
+            <span id="datetime">Time</span>
+            <h5>Goal Pulse</h5>
+        </div>
+        <div class="MixNavbar">
+            <a href="#" class="contactSupport">
+                <i class="ri-customer-service-2-fill"></i>
+                <p>CS</p>
+            </a>
+            <div class="loginForm">
+                <div class="userName">
+                    <i class="ri-user-fill"></i>
+                    <input type="text" placeholder="Username">
+                </div>
+                <div class="userPassword">
+                    <i class="ri-lock-2-fill"></i>
+                    <input type="password" placeholder="password">
+                    <a href="#">forget?</a>
+                </div>
+                <div class="accountBtns">
+                    <a href="#">Login</a>
+                    <a href="#">Signup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--* ========== Main Body Section ========== -->
+
+    <section class="mainBody">
+        <div class="menuSection">
+            <div class="menuItems">
+                <div class="menuItem" onclick="toggleMenu('menuList')">
+                    <i class="ri-dashboard-horizontal-fill"></i>
+                    <h4>Menu List</h4>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuMarket')">
+                    <i class="ri-football-fill"></i>
+                    <h5>Market List</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuHistoric')">
+                    <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                    <h5>Historical Financials</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuTournament')">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h5>Tournament Results</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuPersonal')">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <h5>Personal Center</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuRecharge')">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <h5>Recharge</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuPromotion')">
+                    <i class="fa-solid fa-gift"></i>
+                    <h5>Promotions</h5>
+                </div>
+                <div class="menuItem menuMobile" onclick="toggleMenu('menuAnnouncment')">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <h5>Announcement</h5>
+                </div>
+                <div class="menuItem menuMobile" onclick="toggleMenu('menuRule')">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <h5>Rule Description</h5>
+                </div>
+                <div class="menuItem menuMobile" onclick="toggleMenu('menuFAQ')">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <h5>FAQ</h5>
+                </div>
+            </div>
+        </div>
+        <div class="menuContentSection">
+            <div class="menuContents">
+                <div class="menuList menuContent" id="menuList">
+                    <div class="menuListLeft">
+                        <div class="menuListImg">
+                            <img src="Images/Green Blue Modern Weekly Match Banner (2).png" alt="">
+                        </div>
+                        <div class="movingText">
+                            <i class="ri-volume-up-fill"></i>
+                            <p id="moving-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est temporibus cupiditate voluptatem. Amet, dolores totam!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menuMarket menuContent" id="menuMarket">
+                    <div class="marketListTabs">
+                        <div class="marketListTab active" data-content="all">All</div>
+                        <div class="marketListTab" data-content="today">Today</div>
+                        <div class="marketListTab" data-content="tomorrow">Tomorrow</div>
+                        <div class="marketListTab" data-content="this-week">This Week</div>
+                        <div class="marketListTab" data-content="this-month">This Month</div>
+                    </div>
+                    <div id="all" class="marketListContent active">
+                        <div id="all-matches" class="matches"></div>
+                    </div>
+                    <div id="today" class="marketListContent">
+                        <div id="today-matches" class="matches"></div>
+                    </div>
+                    <div id="tomorrow" class="marketListContent">
+                        <div id="tomorrow-matches" class="matches"></div>
+                    </div>
+                    <div id="this-week" class="marketListContent">
+                        <div id="this-week-matches" class="matches"></div>
+                    </div>
+                    <div id="this-month" class="marketListContent">
+                        <div id="this-month-matches" class="matches"></div>
+                    </div>
+                    <!--* Popup for selecting bet details -->
+                    <div class="menuListpopup" id="bet-details-popup">
+                        <h2>Bet Details</h2>
+                        <p>Projected Score: <span id="projected-score"></span></p>
+                        <p>Profit Percentage: <span id="profit-percentage"></span>%</p>
+                        <p>Volume Available: <span id="available-volume"></span></p>
+                        <button onclick="openBetPopup()">Set Bet</button>
+                    </div>
+                    <!--* Popup for placing bet -->
+                    <div class="menuListpopup2" id="bet-popup">
+                        <h2>Place Bet</h2>
+                        <label for="bet-amount">Enter Bet Amount:</label>
+                        <input type="number" id="bet-amount" min="10" step="10" placeholder="Enter bet amount"><br>
+                        <button onclick="placeBet()">Confirm Bet</button>
+                    </div>
+                    <!--* Popup overlay -->
+                    <div class="popup-overlay" id="popup-overlay"></div>
+                </div>
+                <div class="menuHistoric menuContent" id="menuHistoric">
+                    <h3 class="menuHistoricHeading">Deposit and Withdraw</h3>
+                    <div class="depositPlusWithdrawTable">
+                        <div class="tabs">
+                            <div class="tab active" onclick="showContent('deposit')">Deposit</div>
+                            <div class="tab" onclick="showContent('withdraw')">Withdraw</div>
+                        </div>
+                        <div id="deposit" class="content active">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order Number</th>
+                                        <th>Deposit Time</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2024-06-01 &nbsp; at &nbsp; 10:00 AM</td>
+                                        <td class="amountColor fw-semibold">$100</td>
+                                        <td class="text-success fw-semibold">Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>2024-06-02 &nbsp; at &nbsp; 11:30 AM</td>
+                                        <td class="amountColor fw-semibold">$200</td>
+                                        <td class="text-danger fw-semibold">Pending</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>2024-06-03 &nbsp; at &nbsp; 02:45 PM</td>
+                                        <td class="amountColor fw-semibold">$150</td>
+                                        <td class="text-success fw-semibold">Completed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="withdraw" class="content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order Number</th>
+                                        <th>Withdraw Time</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2024-06-01 &nbsp; at &nbsp; 09:00 AM</td>
+                                        <td class="amountColor fw-semibold">$50</td>
+                                        <td class="text-success fw-semibold">Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>2024-06-02 &nbsp; at &nbsp; 12:00 PM</td>
+                                        <td class="amountColor fw-semibold">$70</td>
+                                        <td class="text-danger fw-semibold">Pending</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>2024-06-03 &nbsp; at &nbsp; 03:30 PM</td>
+                                        <td class="amountColor fw-semibold">$120</td>
+                                        <td class="text-success fw-semibold">Completed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="menuTournament menuContent" id="menuTournament">
+                    <h3 class="menuTournamentHeading">Tournament Results</h3>
+                    <!--* Popup for displaying profit -->
+                    <div id="profit-box">
+                        <table id="profit-table">
+                            <thead>
+                                <tr>
+                                    <th>Bet Amount</th>
+                                    <th>Profit Percentage</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Profited Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Existing and future rows will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+                <div class="menuPersonal menuContent" id="menuPersonal">
+                    <div class="mainProfile">
+                        <div class="mainProfile1">
+                            <div class="profileName">
+                                <h5>Ali Developer</h5>
+                                <h5 class="linear">VIP0</h5>
+                            </div>
+                            <div class="ProgressContainer">
+                                <div class="invitePlusDepositProgress">
+                                    <div class="depositProgressBar">
+                                        <div class="progressPlusVIP">
+                                            <div class="progress-bar">
+                                                <div class="progress" id="invite-progress"></div>
+                                            </div>
+                                            <h5 class="linear">VIP0</h5>
+                                        </div>
+                                        <div class="ivniteContent">
+                                            <p>Number of valid invites</p>
+                                            <p id="invite-limit">0 / 15</p>
+                                        </div>
+                                    </div>
+                                    <div class="inviteProgressBar">
+                                        <div class="progressPlusVIP">
+                                            <div class="progress-bar">
+                                                <div class="progress" id="deposit-progress"></div>
+                                            </div>
+                                            <h5 class="linear">VIP0</h5>
+                                        </div>
+                                        <div class="ivniteContent">
+                                            <p>Deposit</p>
+                                            <p id="deposit-limit">0 / 6000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tradeProgressBar">
+                                    <div class="progressPlusVIP">
+                                        <div class="progress-bar">
+                                            <div class="progress" id="trade-progress"></div>
+                                        </div>
+                                        <h5 class="linear">VIP0</h5>
+                                    </div>
+                                    <div class="ivniteContent">
+                                        <p>Trade</p>
+                                        <p id="trade-limit">0 / 17700</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="VIPCarousel">
+                                <div class="swiper mySwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="swiperCardContent">
+                                                <div class="VIPplusLogo">
+                                                    <h1>VIP1</h1>
+                                                    <img src="Images/icon1.c3b2f625.png" alt="">
+                                                </div>
+                                                <div class="CardContent">
+                                                    <div class="CardContent1">
+                                                        <p>Required deposit amount</p>
+                                                        <p>5900</p>
+                                                    </div>
+                                                    <div class="CardContent2">
+                                                        <p>Number of a valid invites</p>
+                                                        <p>0</p>
+                                                    </div>
+                                                    <div class="CardContent3">
+                                                        <p>Bet for withdrawal conditions</p>
+                                                        <p>17700</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="swiperCardContent">
+                                                <div class="VIPplusLogo">
+                                                    <h1>VIP2</h1>
+                                                    <img src="Images/icon1.c3b2f625.png" alt="">
+                                                </div>
+                                                <div class="CardContent">
+                                                    <div class="CardContent1">
+                                                        <p>Required deposit amount</p>
+                                                        <p>29500</p>
+                                                    </div>
+                                                    <div class="CardContent2">
+                                                        <p>Number of a valid invites</p>
+                                                        <p>0</p>
+                                                    </div>
+                                                    <div class="CardContent3">
+                                                        <p>Bet for withdrawal conditions</p>
+                                                        <p>88500</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="swiperCardContent">
+                                                <div class="VIPplusLogo">
+                                                    <h1>VIP3</h1>
+                                                    <img src="Images/icon1.c3b2f625.png" alt="">
+                                                </div>
+                                                <div class="CardContent">
+                                                    <div class="CardContent1">
+                                                        <p>Required deposit amount</p>
+                                                        <p>59000</p>
+                                                    </div>
+                                                    <div class="CardContent2">
+                                                        <p>Number of a valid invites</p>
+                                                        <p>0</p>
+                                                    </div>
+                                                    <div class="CardContent3">
+                                                        <p>Bet for withdrawal conditions</p>
+                                                        <p>177000</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="swiperCardContent">
+                                                <div class="VIPplusLogo">
+                                                    <h1>VIP4</h1>
+                                                    <img src="Images/icon1.c3b2f625.png" alt="">
+                                                </div>
+                                                <div class="CardContent">
+                                                    <div class="CardContent1">
+                                                        <p>Required deposit amount</p>
+                                                        <p>354000</p>
+                                                    </div>
+                                                    <div class="CardContent2">
+                                                        <p>Number of a valid invites</p>
+                                                        <p>0</p>
+                                                    </div>
+                                                    <div class="CardContent3">
+                                                        <p>Bet for withdrawal conditions</p>
+                                                        <p>1062000</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide bgSwiper">
+                                            <div class="swiperCardContent">
+                                                <div class="VIPplusLogo">
+                                                    <h1>VIP5</h1>
+                                                    <img src="Images/icon2.ac4610b1.png" alt="">
+                                                </div>
+                                                <div class="CardContent">
+                                                    <div class="CardContent1">
+                                                        <p>Required deposit amount</p>
+                                                        <p>590000</p>
+                                                    </div>
+                                                    <div class="CardContent2">
+                                                        <p>Number of a valid invites</p>
+                                                        <p>0</p>
+                                                    </div>
+                                                    <div class="CardContent3">
+                                                        <p>Bet for withdrawal conditions</p>
+                                                        <p>1770000</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide bgSwiper">
+                                            <div class="swiperCardContent">
+                                                <div class="VIPplusLogo">
+                                                    <h1>VIP6</h1>
+                                                    <img src="Images/icon2.ac4610b1.png" alt="">
+                                                </div>
+                                                <div class="CardContent">
+                                                    <div class="CardContent1">
+                                                        <p>Required deposit amount</p>
+                                                        <p>1180000</p>
+                                                    </div>
+                                                    <div class="CardContent2">
+                                                        <p>Number of a valid invites</p>
+                                                        <p>0</p>
+                                                    </div>
+                                                    <div class="CardContent3">
+                                                        <p>Bet for withdrawal conditions</p>
+                                                        <p>3540000</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide bgSwiper">
+                                            <div class="swiperCardContent">
+                                                <div class="VIPplusLogo">
+                                                    <h1>VIP7</h1>
+                                                    <img src="Images/icon2.ac4610b1.png" alt="">
+                                                </div>
+                                                <div class="CardContent">
+                                                    <div class="CardContent1">
+                                                        <p>Required deposit amount</p>
+                                                        <p>23600000</p>
+                                                    </div>
+                                                    <div class="CardContent2">
+                                                        <p>Number of a valid invites</p>
+                                                        <p>0</p>
+                                                    </div>
+                                                    <div class="CardContent3">
+                                                        <p>Bet for withdrawal conditions</p>
+                                                        <p>7080000</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide bgSwiper1">
+                                            <div class="swiperCardContent">
+                                                <div class="VIPplusLogo">
+                                                    <h1>VIP8</h1>
+                                                    <img src="Images/icon3.02f17e3f.png" alt="">
+                                                </div>
+                                                <div class="CardContent">
+                                                    <div class="CardContent1">
+                                                        <p>Required deposit amount</p>
+                                                        <p>4720000</p>
+                                                    </div>
+                                                    <div class="CardContent2">
+                                                        <p>Number of a valid invites</p>
+                                                        <p>0</p>
+                                                    </div>
+                                                    <div class="CardContent3">
+                                                        <p>Bet for withdrawal conditions</p>
+                                                        <p>15930000</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carouselHeading">
+                                <img src="Images/vip arrow.png" alt="">
+                                <h3>Luxury VIP privileges</h3>
+                                <img src="Images/vip arrow.png" alt="">
+                            </div>
+                        </div>
+                        <div class="mainProfile2">
+                            <div class="addCard recordPlusSeemore">
+                                <div class="record">
+                                    <div class="line"></div>
+                                    <p>Record</p>
+                                </div>
+                                <div class="seemore" onclick="openHistoricSection()">
+                                    <a href="#">more</a>
+                                    <i class="ri-arrow-right-double-line"></i>
+                                </div>
+                            </div>
+                            <div class="depositPlusWithdrawTable">
+                                <div class="tabs">
+                                    <div class="tab active" onclick="showContent('deposit')">Deposit</div>
+                                    <div class="tab" onclick="showContent('withdraw')">Withdraw</div>
+                                </div>
+                                <div id="deposit" class="content active">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Order Number</th>
+                                                <th>Submit Time</th>
+                                                <th>Amount</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>2024-06-01 10:00 AM</td>
+                                                <td class="amountColor">$100</td>
+                                                <td class="text-success">Completed</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>2024-06-02 11:30 AM</td>
+                                                <td class="amountColor">$200</td>
+                                                <td class="text-danger">Pending</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>2024-06-03 02:45 PM</td>
+                                                <td class="amountColor">$150</td>
+                                                <td class="text-success">Completed</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="withdraw" class="content">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Order Number</th>
+                                                <th>Submit Time</th>
+                                                <th>Amount</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>2024-06-01 09:00 AM</td>
+                                                <td class="amountColor">$50</td>
+                                                <td class="text-success">Completed</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>2024-06-02 12:00 PM</td>
+                                                <td class="amountColor">$70</td>
+                                                <td class="text-danger">Pending</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>2024-06-03 03:30 PM</td>
+                                                <td class="amountColor">$120</td>
+                                                <td class="text-success">Completed</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userProfile">
+                        <div class="userProfileImg">
+                            <i class="ri-user-fill"></i>
+                        </div>
+                        <div class="userBalanceAdd">
+                            <p>Avaliable Balance (PKR)</p>
+                            <h4>PKR 12</h4>
+                            <div class="userBalanceBtns">
+                                <a href="#" class="withdrawBalanceBtn" onclick="openAgentSection()">Withdraw Balance</a>
+                                <a href="#" class="depositBalanceBtn" onclick="openAgentSection()">Deposit</a>
+                            </div>
+                        </div>
+                        <div class="userProfileInfo">
+                            <div class="profileUsername userProileInfoInner">
+                                <p>Username:</p>
+                                <h6>Chudhary Qaisar</h6>
+                            </div>
+                            <div class="profilePassword userProileInfoInner">
+                                <p>Password:</p>
+                                <h6>********</h6>
+                            </div>
+                            <div class="profileEmail userProileInfoInner">
+                                <p>Email:</p>
+                                <h6>example@gmail.com</h6>
+                            </div>
+                            <div class="profileNumber userProileInfoInner">
+                                <p>Phone Number:</p>
+                                <h6>+923000000000</h6>
+                            </div>
+                            <div class="profileCountry userProileInfoInner">
+                                <p>Country:</p>
+                                <h6>Pakistan</h6>
+                            </div>
+                            <div class="profileInviteCode userProileInfoInner">
+                                <p>Invite Code:</p>
+                                <h6>123456</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menuRecharge menuContent" id="menuRecharge">
+                    <div class="rechargeBtnsPlusUserBlnce">
+                        <div class="rechargeNav">
+                            <button onclick="showForm('depositForm')">Deposit</button>
+                            <button onclick="showForm('withdrawForm')">Withdraw</button>
+                        </div>
+                        <div class="rechargeUserBlance">
+                            <p>Avaliable Balance:</p>
+                            <h5>PKR 12</h5>
+                        </div>
+                    </div>
+                    <div class="formSection active" id="depositForm">
+                        <h4>Deposit Form</h4>
+                        <form>
+                            <div class="bothFormGroup">
+                                <div class="formGroup">
+                                    <label for="financeId">Binance ID:</label>
+                                    <div class="formInputPlusLabel">
+                                        <input type="text" id="financeId" name="financeId" value="123456789" readonly>
+                                        <button type="button" onclick="copyFinanceId()">Copy ID</button>
+                                    </div>
+                                </div>
+                                <div class="formGroup">
+                                    <label for="userName">User Name:</label>
+                                    <input type="text" id="userName" name="userName" placeholder="Enter your username" required>
+                                </div>
+                                <div class="formGroup">
+                                    <label for="depositAmount">Deposit Amount:</label>
+                                    <input type="text" id="depositAmount" name="depositAmount" placeholder="Enter deposit amount" required>
+                                </div>
+                                <div class="formGroup">
+                                    <label for="paymentScreenshot">Payment Screenshot:</label>
+                                    <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+                                </div>
+                            </div>
+                            <button type="submit">Deposit</button>
+                        </form>
+                    </div>
+                    <div class="formSection" id="withdrawForm">
+                        <h4>Withdraw Form</h4>
+                        <form>
+                            <div class="bothFormGroup">
+                                <div class="formGroup">
+                                    <label for="binanceId">Binance ID:</label>
+                                    <input type="text" id="binanceId" name="binanceId" placeholder="Enter your Binance ID" required>
+                                </div>
+                                <div class="formGroup">
+                                    <label for="withdrawAmount">Withdraw Amount:</label>
+                                    <input type="text" id="withdrawAmount" name="withdrawAmount" placeholder="Enter withdraw amount" required>
+                                </div>
+                            </div>
+                            <button type="submit">Withdraw</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="menuPromotion menuContent" id="menuPromotion">
+                    <div class="promotionPage">
+                        <div class="PromotionContainer">
+                            <div class="PromotionHeader">
+                                <h1>Join Our Referral Program</h1>
+                                <p>Share your referral link and earn rewards!</p>
+                            </div>
+                            <section class="referral-link">
+                                <h2>Your Referral Link</h2>
+                                <div class="referralLink-container">
+                                    <input type="text" id="referralLink" value="https://example.com/referral?code=YOURCODE" readonly>
+                                    <button onclick="copyReferralLink()">Copy Link</button>
+                                </div>
+                                <div class="social-share">
+                                    <button class="facebook" onclick="shareOnSocialMedia('facebook')">Share on Facebook</button>
+                                    <button class="twitter" onclick="shareOnSocialMedia('twitter')">Share on Twitter</button>
+                                    <button class="linkedin" onclick="shareOnSocialMedia('linkedin')">Share on LinkedIn</button>
+                                </div>
+                            </section>
+                            <section class="referralTeamTable">
+                                <div class="teamPlusToalDeposit">
+                                    <h2>Team</h2>
+                                    <div class="total-deposit" id="totalDeposit"></div>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Joined Date</th>
+                                            <th>Deposit Amount</th>
+                                            <th>Reward</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="teamTableBody">
+                                        <!-- Dynamic content will be inserted here -->
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div>
+                        <div id="promotionpopup" class="promotionpopup">
+                            <p>Referral link copied to clipboard!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menuAnnouncment menuContent menuMobile" id="menuAnnouncment">
+                    <div class="AnnoucementContainer">
+                        <div class="announcements">
+                            <ul id="announcementList">
+                                <div class="currentAnnouncement">
+                                    <i class="ri-volume-up-fill"></i>
+                                    <li onclick="showMessage('message1')">Announcement 1</li>
+                                </div>
+                                <div class="currentAnnouncement">
+                                    <i class="ri-volume-up-fill"></i>
+                                    <li onclick="showMessage('message2')">Announcement 2</li>
+                                </div>
+                                <div class="currentAnnouncement">
+                                    <i class="ri-volume-up-fill"></i>
+                                    <li onclick="showMessage('message3')">Announcement 3</li>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="message">
+                            <div id="messageContent">
+                                <div class="dummyMessage">
+                                    <i class="ri-volume-up-fill"></i>
+                                    <p>Click on an announcement to see the details.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menuRule menuContent menuMobile" id="menuRule">
+                    <div class="leftRule">
+                        <h3>GENERAL</h3>
+                        <div class="leftRuleContent">
+                            <p class="leftRuleContentNum">1</p>
+                            <p>Please note that the results of all football orders are subject to the rules set by the Company and are not accepted from other sports websites or other live scores.</p>
+                        </div>
+                        <div class="leftRuleContent nextRuleContent">
+                            <p class="leftRuleContentNum">2</p>
+                            <p>The transaction is based on the result of Legal Time (the first and second halves must be fully 45 minutes each, including stoppage time, but not including over time, penalty kick or the result changed by committee). The trade result will be counted as invalid for those events which legal time is under 90 minutes by reasons such as bad weather, game reserved, game canceled or any unexpected reasons. As for some youth leagues the regular game time ranges from 80 to 70 minutes (including stoppage time) will be determinate as legal time. The trade result will be counted as invalid if the game is canceled.</p>
+                        </div>
+                        <div class="leftRuleContent nextRuleContent">
+                            <p class="leftRuleContentNum">3</p>
+                            <p>If the football leagues have indicated where the matches will be held, no matter the matches are marked as home or away on Our company, there is no actual difference. All trades are valid, except when the game is canceled by the cause of weather or any other unexpected factors.</p>
+                        </div>
+                        <div class="leftRuleContent nextRuleContent fourthRule">
+                            <p class="leftRuleContentNum">4</p>
+                            <p>All the trade amount will be returned when the event is canceled or reserved. But if the event is canceled or reserved after full half time is finished, the trade is valid or not will be determinate by Our company and announce the result on the site.</p>
+                        </div>
+                        <div class="leftRuleContent nextRuleContent">
+                            <p class="leftRuleContentNum">5</p>
+                            <p>All orders placed for football matches will be refunded if weather or other unforeseen factors affect the running of the tournament, such as cutbacks, reserved matches...etc. All orders will be refunded and will not be counted if the tournament has been run up to the standard time and will be subject to our announcement. In the event of special circumstances that make it impossible to complete the race, we will inform you of the outcome by way of an announcement.</p>
+                        </div>
+                        <div class="leftRuleContent nextRuleContent">
+                            <p class="leftRuleContentNum">6</p>
+                            <p>The Company reserves the right to delete orders and terminate member accounts if it finds that any member is playing for arbitrage or maliciously using external software to damage .... The Company reserves the right to delete the bets and terminate the member's account if it is found that the bets have been placed in an abnormal manner. Withdrawal function rules: Members can withdraw their own orders within three minutes and up to ten times within the same day. The Company will not be responsible for any losses incurred by members due to improper operation of the withdrawal function.</p>
+                        </div>
+                        <div class="leftRuleContent nextRuleContent seventhRule">
+                            <p class="leftRuleContentNum">7</p>
+                            <p>In case of dispute, the Company's backup data shall prevail. By using this website, members are deemed to have agreed to all the rules and regulations of the Company.</p>
+                        </div>
+                    </div>
+                    <div class="rightRule">
+                        <h3>REFLEX</h3>
+                        <div class="rightHeading">
+                            <div class="line"></div>
+                            <h3>Example - Correct score (2-2)</h3>
+                        </div>
+                        <div class="leftRuleContent nextRuleContent rightFirstRule">
+                            <p class="leftRuleContentNum">1</p>
+                            <p>To against: Team A(Home) VS Team B(Away), 2-2 correct score. Assume game final result was 2-2 which means against fail, then lose bet amount 1000.</p>
+                        </div>
+                        <div class="leftRuleContent nextRuleContent rightFirstRule">
+                            <p class="leftRuleContentNum">2</p>
+                            <p>Oppositely if final game result is other than this, which means against success, then can gain the profit (bet amount 1000*0.0357*0.95=33.91)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menuFAQ menuContent menuMobile" id="menuFAQ">
+                    <div class="faqContent">
+                        <h3>1. What is Gaol Pulse?</h3>
+                        <p>Gaol Pulse club a sport investment company that focuses on empowering members to become financially free through its VIP investment opportunity.</p>
+                        <h3>2. What does GaolPulse do?</h3>
+                        <p>We uses big data analytics system and software to make data-driven decisions that provide "zero risk and high ROI (Return on Investment)" for investors</p>
+                        <h3>3. How do you get involved?</h3>
+                        <p>You can simply get involved by registering on our website</p>
+                        <h3>4. How to use it?</h3>
+                        <p>Our platform is easy to understand. Anybody, with or without computer knowledge can use it</p>
+                        <h3>5. How can you make money? We provide multiple streams of income for our members.</h3>
+                        <div class="fifthQuestion">
+                            <h4>5.1 By personal investment</h4>
+                            <p>Change your life by investing with us. Secure your future by investing and earning high income</p>
+                            <h4>5.2 By Referral Bonus Commission</h4>
+                            <p>Refer a friend, family member and earn high commission. Our refer program enable member earn high commission bonus when they invite others</p>
+                        </div>
+                        <h3>6. How does the GaolPulse platform make money?</h3>
+                        <p>Platform revenue includes team investment, league ticket share, including member investment funds will be used to make short term trading profit.</p>
+                        <h3>7. How it works?</h3>
+                        <p>For example, if you bet 100 USDT, you get 30% to 40% return on your investment (ROI). We only charge transaction fees on profit earned not on capital. We strive to ensure you make money via our win-win investment model.</p>
+                        <div class="factContent">
+                            <h3>FACT YOU SHOULD KNOW</h3>
+                            <p>According to data 24% of investors only invest 1 percent of their fund, and after an average of 18 days, they voluntarily double their fund, also 35% of investors double their fund within 32 days; and 41% of investors in 36 days, this is all possible because of our high return of investment model.</p>
+                            <p>You need to know that among our investors, 12% have exceeded 300% ROI on their investment. After removing their investment cost.</p>
+                            <p>Kindly visit in order to get started.</p>
+                        </div>
+                        <div class="factContent">
+                            <h3>HOW TO PLAY THE GAME</h3>
+                            <p>GaolPulse investment platform is different from other investment platform because of it interactive graphical user interface.</p>
+                            <p>We use a "zero risk" investment algorithm, which reflects on football scores. As long as the wrong score is guessed, the investment can be profitable.</p>
+                            <p>For example: The result of a football match is 3:0. If a member invests in a project other than "3:0" before the match, the investment can be profitable.</p>
+                            <p>In the GaolPulse investment platform, each game provides a total of 18 common score items such as: 0:0, 1:0, 1:1,1:2, 0:1, 0:2, 2:2... etc.</p>
+                            <p>You can only choose one score item to invest in, even when the game result is different from your invested choice you still make money and the profit probability is 94.44%.</p>
+                        </div>
+                        <div class="factContent">
+                            <h3>MAKE MONEY WITH OUR REFER PROGRAM - INVITE TO RECHARGE</h3>
+                            <h4>(For Those with Investment knowledge)</h4>
+                            <p>If you know about investment, and have enough capital you can invest a huge sum and enjoy a high return rate of your investment.</p>
+                            <p>To Recharge:click on the "Recharge bottom" in the product session and after successfully recharging enjoy your investment.</p>
+                            <h4>(For those with little Investment knowledge)</h4>
+                            <p>If you don’t have any investment experience. We advise that you invest small amount of funds, and after you are familiar and confident with the platform. You can increase your investment capital.</p>
+                            <p>The global pandemic has made major economies lose over 4.9 percent of their gross domestic product (GDP). To put this number in perspective, global GDP was estimated at around 84.54 trillion U.S. dollars in 2020 – meaning that a 4.5 percent drop in economic growth results in almost 2.96 trillion U.S. dollars of lost economic output.</p>
+                            <p>The world economy is at a depression stage. There is no better time to invest than now. With the GaolPulse platform, every game provides you an opportunity to be financially free. Invest one day now and earn one day earlier.</p>
+                            <h4>(For those with no Investment knowledge and skepticism attitude)</h4>
+                            <p>Everyone was at this stage but now they have already made considerable profits using our platform. We now have over 10,000 investors that are taking advantage of this opportunity. You should not be left out, please join now.</p>
+                        </div>
+                        <div class="factContent">
+                            <h2>MAKE MONEY WITH OUR REFERRAL PROGRAM</h2>
+                            <p>You can get a commission bonus by inviting others. Members get refer commission bonus.</p>
+                            <p>If you don’t want to invest, you can refer others to the platform and make good money.</p>
+                            <p><b>Refer People, Talk to Family, invite your Friends and Make Money from Our Refer Program.</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--* ========== footer Section ========== -->
+
+    <footer>
+        <div class="footerContent">
+            <div class="aboutUs">
+                <img src="Images/logo.png" alt="">
+                <h6>About Us</h6>
+            </div>
+            <div class="officalPartners">
+                <h6>Officially issued legal licenses and partners</h6>
+                <img src="Images/license.fea75dc0.png" alt="">
+            </div>
+        </div>
+        <div class="copyRight">
+            <p>copyrights © 2023 GaolPulse. all rights reserved.</p>
+        </div>
+    </footer>
+
+    <!--* JS Links -->
+    <script src="https://kit.fontawesome.com/c70d2fb412.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

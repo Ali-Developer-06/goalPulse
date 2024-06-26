@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="mainBody">
+        <div class="menuSection">
+            <div class="menuItems">
+                <div class="menuItem" onclick="toggleMenu('menuList')">
+                    <i class="ri-dashboard-horizontal-fill"></i>
+                    <h4>Menu List</h4>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuMarket')">
+                    <i class="ri-football-fill"></i>
+                    <h5>Market List</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuHistoric')">
+                    <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                    <h5>Historical Financials</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuTournament')">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h5>Tournament Results</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuPersonal')">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <h5>Personal Center</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuRecharge')">
+                    <i class="fa-solid fa-users-line"></i>
+                    <h5>Recharge Section</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuPromotion')">
+                    <i class="fa-solid fa-gift"></i>
+                    <h5>Promotions</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuAnnouncment')">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <h5>Announcement</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuRule')">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <h5>Rule Description</h5>
+                </div>
+                <div class="menuItem" onclick="toggleMenu('menuFAQ')">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <h5>FAQ</h5>
+                </div>
+            </div>
+        </div>
+        <div class="menuContentSection">
+            <div class="menuContents">
+                <div class="menuList menuContent" id="menuList">
+                    <h1>Menu Section</h1>
+                </div>
+                <div class="menuMarket menuContent" id="menuMarket">
+                    <h1>Market Section</h1>
+                </div>
+                <div class="menuHistoric menuContent" id="menuHistoric">
+                    <h1>Historic Section</h1>
+                </div>
+                <div class="menuTournament menuContent" id="menuTournament">
+                    <h1>Tournament Section</h1>
+                </div>
+                <div class="menuPersonal menuContent" id="menuPersonal">
+                    <h1>Personal Section</h1>
+                </div>
+                <div class="menuRecharge menuContent" id="menuRecharge">
+                    <h1>Recharge Section</h1>
+                </div>
+                <div class="menuPromotion menuContent" id="menuPromotion">
+                    <h1>Promotion Section</h1>
+                </div>
+                <div class="menuAnnouncment menuContent" id="menuAnnouncment">
+                    <h1>Announcement Section</h1>
+                </div>
+                <div class="menuRule menuContent" id="menuRule">
+                    <h1>Rule Section</h1>
+                </div>
+                <div class="menuFAQ menuContent" id="menuFAQ">
+                    <h1>FAQ Section</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>

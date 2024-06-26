@@ -1,0 +1,1682 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --black-color: #000;
+    --white-color: #fff;
+    --body-color: #F1F3F7;
+    --hover-color: #660D0F;
+    --primary-color: #C11D24;
+    --secondary-color: #EFC844;
+    --footer-color: #353F4B;
+}
+.linear{
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #C11D24, #660D0F);
+}
+h3{
+    font-weight: 600;
+}
+h4,
+h5,
+h2{
+    font-weight: 500;
+}
+p{
+    margin: 0;
+}
+body{
+    scrollbar-width: thin;
+    background-color: var(--body-color);
+    scrollbar-color: linear-gradient(to bottom, #C11D24, #660D0F) #f1f1f1;
+}
+/** scroll bar color */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #C11D24, #660D0F);
+    border-radius: 6px;
+}
+
+    /** < ====== navbar styling ====== --> */
+
+.navbar{
+    width: 100%;
+    height: 70px;
+    padding: 0 10px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+    background-color: var(--white-color);
+    border-bottom: 10px solid #ccc;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+.timePlusLogo h5{
+    color: var(--black-color);
+}
+.MixNavbar,
+.loginForm{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.contactSupport{
+    color: gray;
+    text-decoration: none;
+}
+.contactSupport:hover{
+    color: var(--hover-color);
+}
+.contactSupport p{
+    margin: 0;
+    font-size: 13px;
+}
+.userName,
+.userPassword{
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+.userName input{
+    border: none;
+    outline: none;
+}
+.userName:hover{
+    border: 1px solid var(--primary-color);
+}
+.userPassword input{
+    width: 100px;
+    border: none;
+    outline: none;
+}
+.userPassword:hover{
+    border: 1px solid var(--primary-color);
+}
+.userPassword a{
+    color: gray;
+    font-size: 12px;
+    text-decoration: none;
+}
+.accountBtns a{
+    padding: 5px 15px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+    /** < ====== main body styling ====== --> */
+
+.mainBody{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 70px;
+}
+.menuSection{
+    width: 15%;
+    background-color: var(--white-color);
+}
+.menuItems{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.menuItem{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding-left: 10px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.menuItem:hover{
+    color: var(--white-color);
+    background-color: var(--hover-color);
+}
+.menuItem.active{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.menuItem:first-child{
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+.menuItem h4{
+    margin: 0;
+    font-size: 18px;
+}
+.menuItem h5{
+    margin: 0;
+    font-size: 13px;
+}
+.menuContentSection{
+    width: 85%;
+    padding: 10px;
+    background-color: var(--white-color);
+}
+
+.menuHistoric,
+.menuTournament{
+    display: none;
+}
+.menuMarket.active{
+    display: block;
+}
+.menuHistoric.active{
+    display: block;
+}
+.menuTournament.active{
+    display: block;
+}
+
+    /** < ====== Menu List section styling ====== --> */
+
+.menuList{
+    display: none;
+}
+.menuList.active{
+    display: flex;
+    gap: 10px;
+}
+.menuListLeft{
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.menuListImg{
+    width: 100%;
+}
+.menuListImg img{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+.movingText{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px 0;
+    background-color: #7E8693;
+}
+.movingText i{
+    z-index: 1;
+    width: 40px;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    background-color: #7E8693;
+}
+#moving-text{
+    position: absolute;
+    white-space: nowrap;
+    font-size: 14px;
+    color: #fff;
+    right: 0;
+    animation: moveText 20s linear infinite;
+}
+@keyframes moveText{
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/** < ====== Menu Market section styling ====== --> */
+
+.menuMarket{
+    display: none;
+}
+.menuMarket.active{
+    display: block;
+}
+.marketListTabs{
+    display: flex;
+    cursor: pointer;
+}
+.marketListTabs div{
+    padding: 10px;
+    font-weight: 400;
+    margin-right: 5px;
+}
+.marketListTabs .active{
+    font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+.marketListContent{
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+}
+.marketListContent.active{
+    display: block;
+}
+.matches{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.menuListMatches{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.menuListMatch{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 15px;
+    box-shadow: rgba(0, 0, 0, 0.34) 0px 3px 8px;
+}
+.menuListMatchTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.menuListMatchBottomTeams{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+.menuListMatchImgPlusTeam1,
+.menuListMatchImgPlusTeam2{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.menuListMatchImg img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.menuListMatchTopBox{
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    clip-path: polygon(0 0, 100% 0%, 90% 100%, 10% 100%);
+}
+.menuListMatchTopBox p{
+    margin: 0;
+    color: #fff;
+}
+.menuListpopup{
+    height: 450px;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: 90%;
+    display: none;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+}
+.menuListpopup2{
+    width: 50%;
+    display: none;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    z-index: 1000;
+}
+.popup-overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+}
+.popup button{
+    padding: 8px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#profit-box h3{
+    padding: 10px;
+    font-weight: 500;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.popup-header p:nth-child(1){
+    font-size: 20px;
+    padding: 10px 0;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.popup-header p:nth-child(2){
+    color: grey;
+    margin: 10px 0;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+table tr th{
+    font-weight: 500;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+table tr td:nth-child(1){
+    font-weight: 500;
+    color: var(--primary-color);
+}
+table tr td:nth-child(2){
+    color: green;
+    font-weight: 500;
+}
+table tr td button{
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.close-btn{
+    height: 40px;
+    width: 120px;
+    border: none;
+    margin: 10px 0;
+    border-radius: 4px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.close-btn:hover{
+    background-color: var(--hover-color);
+}
+.betPopupContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.betPopupContent1,
+.betPopupContent2,
+.betPopupContent3{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.betPopupContent1 input{
+    width: 250px;
+    outline: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.betPopupContent1 input:hover{
+    border: 1px solid var(--primary-color);
+}
+.betPopupContent2 span{
+    font-weight: 600;
+}
+.betPopupContent3 span{
+    color: green;
+    font-weight: 700;
+}
+.bet-buttons{
+    margin: 20px 0 0;
+}
+.bet-buttons button{
+    background: none;
+    margin: 0 5px;
+    padding: 2px 20px;
+    border-radius: 4px;
+    border: 1px solid var(--primary-color);
+}
+.bet-buttons button:hover{
+    color: #fff;
+    background: var(--primary-color);
+}
+.placeBet,
+.close-btn2{
+    border: none;
+    color: #fff;
+    margin: 20px 10px 10px 0;
+    padding: 5px 20px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+}
+.placeBet:hover{
+    background-color: var(--hover-color);
+}
+.close-btn2:hover{
+    background-color: var(--hover-color);
+}
+.popupAvaliableBalance{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin: 10px 0 0;
+    padding: 5px 10px;
+    width: max-content;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.popupAvaliableBalance:hover{
+    color: var(--white-color);
+    background-color: var(--hover-color);
+}
+.popupAvaliableBalance p{
+    font-weight: 500;
+}
+.popupAvaliableBalance span{
+    font-weight: 600;
+}
+
+    /** < ====== Hestoric & Tournment section styling ====== --> */
+
+.menuHistoricHeading,
+.menuTournamentHeading{
+    color: #fff;
+    padding: 10px;
+    font-weight: 500;
+    background-color: var(--primary-color);
+}
+
+    /** < ====== Personal section styling ====== --> */
+
+.menuPersonal{
+    display: none;
+}
+.menuPersonal.active{
+    display: flex;
+    gap: 10px;
+}
+.mainProfile{
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.mainProfile1{
+    margin: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.profileName{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.profileName h5{
+    margin: 0;
+    font-size: 16px;
+}
+.ProgressContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0;
+}
+.invitePlusDepositProgress{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.depositProgressBar,
+.inviteProgressBar{
+    width: 50%;
+}
+.progress-bar{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+    background-color: #D5D8DE;
+}
+.progressPlusVIP{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.progressPlusVIP h5{
+    margin: 0;
+    font-size: 16px;
+}
+.progress{
+    width: 0;
+    height: 10px;
+    border-radius: 25px;
+    transition: width 0.5s;
+    background-color: var(--primary-color);
+}
+#deposit-limit, #invite-limit, #trade-limit {
+    font-size: 13px;
+    margin: 5px 0;
+}
+.ivniteContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.ivniteContent p{
+    margin: 0;
+    font-size: 13px;
+}
+.ProgressContainer input{
+    margin: 10px;
+    padding: 10px;
+    font-size: 1em;
+}
+.ProgressContainer button{
+    font-size: 1em;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.VIPCarousel{
+    position: relative;
+    width: 100%;
+}
+.swiper{
+    width: 100%;
+    padding-bottom: 20px;
+}
+.swiper-slide{
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    color: var(--white-color);
+    background: linear-gradient(to right, #589CF9, #2C80F5);
+}
+.bgSwiper{
+    background: linear-gradient(to right, #D3B86F, #B08D4D);
+}
+.bgSwiper1{
+    background: linear-gradient(to right, #778CC0, #5A79B2);
+}
+.swiperCardContent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.VIPplusLogo{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.VIPplusLogo img{
+    width: 120px;
+    height: 120px;
+}
+.CardContent{
+    width: 50%;
+    font-size: 14px;
+}
+.CardContent p{
+    margin: 0;
+}
+.carouselHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.carouselHeading h3{
+    font-size: 18px;
+    margin: 0;
+}
+.carouselHeading img{
+    width: 125px;
+}
+.carouselHeading img:last-child{
+    rotate: 180deg;
+}
+.mainProfile2{
+    margin: 10px;
+    padding: 20px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.bankSection{
+    height: 50vh;
+}
+.addCard{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.addCard .line{
+    width: 5px;
+    height: 15px;
+    border-radius: 0 2px 2px 0;
+    background-color: #C11D24;
+}
+.addCard p{
+    margin: 0;
+}
+
+/*? hover popup */
+
+.hover-container{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    font-size: 10px;
+    text-align: center;
+    position: relative;
+    border-radius: 50px;
+    display: inline-block;
+    color: var(--white-color);
+    background-color: #353F4B;
+}
+.hoverPopup{
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.hover-container:hover .hoverPopup{
+    display: block;
+}
+.mainProfile2{
+    margin: 10px;
+    padding: 20px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.recordPlusSeemore{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.recordPlusSeemore .record{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.recordPlusSeemore .seemore{
+    display: flex;
+    align-items: center;
+}
+.recordPlusSeemore .seemore i{
+    color: var(--primary-color);
+}
+.recordPlusSeemore .seemore a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/*? depositPlusWithdrawTable */
+
+.depositPlusWithdrawTable{
+    padding-top: 20px;
+}
+.tabs{
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.tab{
+    padding: 10px 20px;
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+.tab.active{
+    border-bottom: 2px solid var(--primary-color);
+}
+.content{
+    display: none;
+}
+.content.active{
+    display: block;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+th{
+    background-color: #f2f2f2;
+}
+.amountColor{
+    color: blue;
+}
+
+/*? user profile styling */
+
+.userProfile{
+    width: 30%;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.userProfileImg{
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.userProfileImg i{
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+}
+.userBalanceAdd{
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.userBalanceAdd h4{
+    margin: 0;
+    padding: 20px 0 30px;
+}
+.userBalanceBtns{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.userBalanceBtns a{
+    width: 200px;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+}
+.userBalanceBtns a:hover{
+    color: var(--white-color);
+    border: 2px solid var(--hover-color);
+    background-color: var(--hover-color);
+}
+.userProfileInfo{
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.userProileInfoInner{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+.userProileInfoInner h6{
+    margin: 0;
+}
+
+    /** < ====== Recharge section styling ====== --> */
+
+.menuRecharge{
+    display: none;
+}
+.menuRecharge.active{
+    display: block;
+}
+.rechargeBtnsPlusUserBlnce{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rechargeUserBlance{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.rechargeUserBlance:hover{
+    background-color: var(--hover-color);
+}
+.rechargeUserBlance h5{
+    margin: 0;
+}
+.rechargeNav{
+    margin-bottom: 20px;
+}
+.rechargeNav button{
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 3px;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
+}
+.rechargeNav button:hover{
+    background-color: var(--hover-color);
+}
+.formSection{
+    display: none;
+}
+.formSection.active{
+    display: block;
+}
+.formSection h4{
+    padding: 10px;
+    cursor: pointer;
+    width: max-content;
+    border-radius: 4px;
+    color: var(--white-color);
+    background-color: var(--hover-color);
+}
+.formSection h4:hover{
+    background-color: var(--primary-color);
+}
+.bothFormGroup{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.formGroup label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.formInputPlusLabel{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.formGroup input[type="text"],
+.formGroup input[type="file"]{
+    width: 350px;
+    outline: none;
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+.formGroup input[type="text"]:hover,
+.formGroup input[type="file"]:hover{
+    border: 1px solid var(--primary-color);
+}
+.formInputPlusLabel button[type="button"]{
+    width: 100px;
+    border: none;
+    position: absolute;
+    right: 0;
+    padding: 10px 0;
+    border-radius: 0 4px 4px 0;
+    color: var(--white-color);
+    background-color: var(--hover-color);
+}
+.formInputPlusLabel button[type="button"]:hover{
+    background-color: var(--primary-color);
+}
+form button[type="submit"]{
+    border: none;
+    width: 350px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 0;
+    margin: 20px 0;
+    border-radius: 3px;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
+}
+form button[type="submit"]:hover{
+    background-color: var(--hover-color);
+}
+
+
+    /** < ====== Promotion section styling ====== --> */
+
+    .menuPromotion{
+        display: none;
+    }
+    .menuPromotion.active{
+        display: block;
+    }
+    .promotionPage{
+        margin: 10px 0 0;
+        padding: 0 10px;
+    }
+    .PromotionContainer{
+        width: 100%;
+        padding: 30px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: 2px solid rgba(0, 0, 0, 0.258);
+    }
+    .PromotionHeader{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .PromotionHeader h1{
+        margin: 0;
+        font-size: 2.5em;
+        color: #2c3e50;
+    }
+    .PromotionHeader p{
+        font-size: 1.2em;
+        color: #7f8c8d;
+    }
+    .referral-link, .referralTeamTable{
+        margin-bottom: 30px;
+    }
+    .referral-link h2,
+    .referralTeamTable h2{
+        color: #34495e;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    .referralLink-container{
+        display: flex;
+        margin-bottom: 10px;
+    }
+    .referralLink-container input{
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 1em;
+        border-radius: 8px 0 0 8px;
+        border: 1px solid var(--primary-color);
+        background: rgba(255, 255, 255, 0.5);
+    }
+    .referralLink-container button{
+        border: none;
+        color: #fff;
+        font-size: 1em;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 0 8px 8px 0;
+        background-color: var(--primary-color);
+    }
+    .referralLink-container button:hover {
+        background-color: var(--hover-color);
+    }
+    .social-share{
+        display: flex;
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+    .social-share button{
+        flex: 1;
+        border: none;
+        color: #fff;
+        font-size: 1em;
+        margin-right: 10px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .social-share button:last-child{
+        margin-right: 0;
+    }
+    .social-share button.facebook{
+        background-color: #3b5998;
+    }
+    .social-share button.twitter{
+        background-color: #1da1f2;
+    }
+    .social-share button.linkedin{
+        background-color: #0077b5;
+    }
+    .social-share button:hover{
+        opacity: 0.9;
+    }
+    .teamPlusToalDeposit{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+    .teamPlusToalDeposit h2{
+        margin: 0;
+    }
+    .total-deposit{
+        text-align: right;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #34495e;
+    }
+    .referralTeamTable table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .referralTeamTable th,
+    .referralTeamTable td{
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+    .referralTeamTable th{
+        color: var(--white-color);
+        background-color: var(--primary-color);
+    }
+    .referralTeamTable tr:hover{
+        cursor: pointer;
+        background-color: rgba(52, 152, 219, 0.2);
+    }
+    .promotionpopup{
+        position: fixed;
+        top: -150px;
+        left: 50%;
+        opacity: 0;
+        color: #fff;
+        font-size: 1em;
+        padding: 15px 30px;
+        border-radius: 8px;
+        transform: translateX(-50%);
+        transition: opacity 0.5s, top 1s;
+        background-color: #2ecc71;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+    .promotionpopup.show{
+        top: 100px;
+        opacity: 1;
+    }
+
+    /** < ====== Annoucment section styling ====== --> */
+
+.menuAnnouncment{
+    display: none;
+}
+.menuAnnouncment.active{
+    display: block;
+}
+.AnnoucementContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+.announcements, .message{
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#announcementList{
+    list-style-type: none;
+    padding: 0;
+}
+.currentAnnouncement{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.currentAnnouncement i{
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: #597EF7;
+}
+.currentAnnouncement li{
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.currentAnnouncement:hover{
+    background-color: #597ef72d;
+}
+#messageContent{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.dummyMessage{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.dummyMessage i{
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: #597EF7;
+}
+
+    /** < ====== Rule section styling ====== --> */
+
+.menuRule{
+    display: none;
+}
+.menuRule.active{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.leftRule{
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.leftRule h3{
+    font-weight: 500;
+    padding: 5px 0;
+}
+.leftRuleContent{
+    display: flex;
+    gap: 10px;
+}
+.nextRuleContent{
+    padding-top: 20px;
+}
+.leftRuleContent .leftRuleContentNum{
+    width: 70px;
+    height: 25px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.nextRuleContent .leftRuleContentNum{
+    width: 70px;
+    height: 25px;
+    display: flex;
+    border-radius: 50%;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.fourthRule .leftRuleContentNum{
+    width: 70px;
+    height: 25px;
+    display: flex;
+    border-radius: 50%;
+    padding: 6px;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.seventhRule .leftRuleContentNum{
+    width: 70px;
+    height: 25px;
+    display: flex;
+    border-radius: 50%;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.rightRule{
+    width: 50%;
+    padding: 0 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.rightRule h3{
+    font-weight: 500;
+    padding: 5px 0;
+}
+.rightHeading{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 10px;
+}
+.rightHeading h3{
+    margin: 0;
+    font-weight: 500;
+}
+.rightHeading .line{
+    width: 4px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: #597EF7;
+}
+.rightFirstRule .leftRuleContentNum{
+    width: 60px;
+    height: 25px;   
+    display: flex;
+    border-radius: 50%;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+    /** < ====== FAQ section styling ====== --> */
+
+.menuFAQ{
+    padding: 10px;
+    display: none;
+}
+.menuFAQ.active{
+    display: block;
+}
+.faqContent h3{
+    font-size: 22px;
+    font-weight: 500;
+}
+.faqContent h4{
+    font-size: 18px;
+    font-weight: 500;
+}
+.faqContent p{
+    font-size: 15px;
+    padding: 10px 0;
+}
+.fifthQuestion{
+    padding: 10px 15px;
+}
+.factContent{
+    padding: 10px 0;
+}
+.factContent h3{
+    padding: 5px 0;
+}
+.factContent h4,
+h2{
+    padding: 10px 0;
+}
+.factContent p{
+    margin: 0;
+    padding: 0;
+}
+
+    /** < ====== footer styling ====== --> */
+
+footer{
+    color: #7E8693;
+    padding: 20px 0;
+    background-color: var(--footer-color);
+}
+.footerContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+.aboutUs{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.aboutUs img{
+    padding: 10px;
+    width: 150px;
+    border-radius: 4px;
+}
+.officalPartners{
+    text-align: center;
+}
+.officalPartners img{
+    width: 400px;
+}
+.copyRight{
+    text-align: center;
+}
+.copyRight p{
+    margin: 20px 0 0;
+    font-size: 14px;
+}
+
+
+    /** < ====== Media Query styling ====== --> */
+
+@media (max-width:768px){
+
+    /*? < === Navabr === --> */
+
+    .navbar{
+        display: none;
+    }
+
+    /*? < === Main Body === --> */
+
+    .mainBody{
+        margin: 0;
+        position: relative;
+    }
+    .menuMobile{
+        display: none;
+    }
+    .menuContentSection{
+        width: 100%;
+        padding: 0;
+    }
+
+    /*? menu section */
+
+    .menuSection{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    .menuItems{
+        flex-direction: row;
+    }
+    .menuItem{
+        padding: 0;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .menuItem h4,
+    .menuItem h5{
+        display: none;
+    }
+
+    /*? menu list */
+
+    .menuListImg img{
+        width: 100%;
+        height: 75vh;
+        object-fit: cover;
+    }
+
+    /*? menu market */
+
+    .marketListTabs{
+        gap: 10px;
+        padding: 15px 8px;
+        color: var(--white-color);
+        background-color: var(--primary-color);
+    }
+    .marketListTabs .active{
+        font-weight: 600;
+        color: var(--white-color);
+        border-bottom: 2px solid var(--white-color);
+    }
+    .marketListTabs div{
+        padding: 0;
+        font-size: 12px;
+    }
+    .marketListContent{
+        padding: 0;
+    }
+    .menuListMatchTop p{
+        font-size: 12px;
+    }
+    .menuListMatchTopBox{
+        width: 150px;
+        height: 20px;
+    }
+    .menuListMatchImg img{
+        width: 30px;
+        height: 30px;
+    }
+    .menuListMatchTeam p{
+        font-size: 12px;
+    }
+
+    /*? menu market first popup */
+
+    .menuListpopup{
+        width: 95%;
+        height: 400px;
+        top: 47%;
+        padding: 10px;
+    }
+    .menuListpopup2{
+        top: 47%;
+        width: 95%;
+        height: 400px;
+        padding: 10px;
+    }
+    table tr th{
+        font-size: 10px;
+    }
+    table tr td{
+        font-size: 12px;
+    }
+    table tr td button{
+        padding: 5px;
+        font-size: 8px;
+    }
+    .close-btn{
+        height: 30px;
+        width: 100px;
+    }
+    .betPopupContent label,
+    p{
+        font-size: 10px;
+    }
+    .betPopupContent1 input{
+        width: 100px;
+        padding: 5px;
+        font-size: 14px;
+    }
+    .bet-buttons{
+        margin: 10px 0 0;
+    }
+    .bet-buttons button{
+        width: 120px;
+        margin: 5px;
+    }
+    .placeBet,
+    .close-btn2{
+        margin: 10px 0 5px 5px;
+    }
+
+    /*? Historic section plus Tournment section */
+
+    .menuHistoricHeading{
+        padding: 5px 10px;
+        margin: 0;
+    }
+    .menuTournamentHeading{
+        padding: 5px 10px;
+    }
+    .depositPlusWithdrawTable{
+        padding: 0;
+    }
+    #profit-table tr th{
+        font-size: 7px;
+    }
+    #profit-table tr td{
+        font-size: 10px;
+    }
+
+    /*? personal center */
+
+    .menuPersonal.active{
+        flex-direction: column;
+    }
+    .mainProfile,
+    .userProfile{
+        width: 100%;
+    }
+    .mainProfile1{
+        padding: 10px;
+    }
+    .invitePlusDepositProgress{
+        flex-direction: column;
+    }
+    .depositProgressBar,
+    .inviteProgressBar{
+        width: 100%;
+    }
+    .swiper-slide{
+        width: 280px;
+        height: 150px;
+    }
+    .VIPplusLogo h1{
+        font-size: 20px;
+    }
+    .VIPplusLogo img{
+        width: 80px;
+        height: 80px;
+    }
+    .CardContent1 p{
+        font-size: 9.5px;
+    }
+    .CardContent2 p{
+        font-size: 9.5px;
+    }
+    .CardContent3 p{
+        font-size: 9.5px;
+    }
+    .carouselHeading h3{
+        font-size: 10px;
+    }
+    .carouselHeading img{
+        width: 75px;
+    }
+
+    /*? recharge section */
+
+    .menuRecharge.active{
+        padding: 5px;
+    }
+    .rechargeBtnsPlusUserBlnce{
+        padding: 10px 0 20px;
+    }
+    .rechargeNav{
+        margin: 0;
+    }
+    .rechargeNav button{
+        font-size: 12px;
+        padding: 10px;
+    }
+    .rechargeUserBlance{
+        padding: 10px 5px;
+    }
+    .rechargeUserBlance p{
+        font-size: 8px;
+    }
+    .rechargeUserBlance h5{
+        font-size: 10px;
+    }
+    .formSection h4{
+        font-size: 12px;
+    }
+    .bothFormGroup{
+        gap: 10px;
+    }
+    .formGroup{
+        padding-top: 10px;
+    }
+    .formGroup input[type="text"],
+    .formGroup input[type="file"]{
+        width: 275px;
+        padding: 7px;
+    }
+    .formInputPlusLabel button[type="button"]{
+        padding: 7.5px;
+    }
+    form button[type="submit"]{
+        width: 275px;
+    }
+
+    /*? promotion */
+
+    .PromotionContainer{
+        padding: 10px;
+    }
+    .PromotionHeader h1{
+        font-size: 1.7em;
+    }
+    .PromotionHeader p{
+        font-size: 1em;
+    }
+    .referral-link h2{
+        margin: 0;
+    }
+    .referralLink-container input,
+    .referralLink-container button{
+        padding: 10px;
+        font-size: 0.5em;
+    }
+    .social-share button{
+        font-size: 0.7em;
+        padding: 10px;
+    }
+    .total-deposit{
+        font-size: 0.7em;
+    }
+
+    /*? < === Footer === --> */
+
+    footer{
+        padding-bottom: 60px;
+    }
+    .footerContent{
+        gap: 20px;
+        flex-direction: column;
+    }
+    .aboutUs img{
+        width: 100px;
+    }
+    .officalPartners img{
+        width: 300px;
+    }
+
+}

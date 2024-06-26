@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --black-color: #000;
+    --white-color: #fff;
+    --body-color: #F1F3F7;
+    --hover-color: #660D0F;
+    --primary-color: #C11D24;
+    --secondary-color: #EFC844;
+}
+h3{
+    font-weight: 600;
+}
+h4,
+h2{
+    font-weight: 500;
+}
+body{
+    background-color: var(--body-color);
+}
+.regestrationForm{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.leftSideForm{
+    width: 65%;
+    height: 100%;
+    padding: 20px;
+    margin-left: 50px;
+    position: relative;
+}
+.toggle-button{
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    color: #C11D24;
+    padding-bottom: 3px;
+    transition: background-color 0.3s ease;
+}
+.toggle-button.active{
+    font-weight: 700;
+    border-bottom: 2px solid red;
+}
+.content{
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+}
+.content.active{
+    display: block;
+}
+.loginForm{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+.loginForm .password{
+    margin: 0;
+}
+.loginForm label{
+    padding: 10px 0;
+}
+.loginForm input{
+    width: 300px;
+    height: 35px;
+    outline: none;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+.loginForm input:hover{
+    border: 1px solid var(--primary-color);
+}
+.loginForm .checkBox{
+    position: absolute;
+    top: 62%; left: 0;
+}
+.loginBtn a{
+    width: 300px;
+    height: 35px;
+    color: #fff;
+    display: flex;
+    margin: 80px 0 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #C11D24;
+}
+.loginBtn a:hover{
+    background-color: var(--hover-color);
+}
+.forgetPassword{
+    display: flex;
+    gap: 120px;
+}
+.forgetPassword a{
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.loginForm .passwordPlusEyeBtn{
+    width: 300px;
+}
+.loginForm .passwordPlusEyeBtn input{
+    width: 300px;
+}
+.countryPlusCurrency{
+    gap: 20px;
+    width: 250px;
+    height: 35px;
+    display: flex;
+    padding: 5px 10px;
+    align-items: center;
+    background: transparent;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+}
+.countryPlusCurrency i{
+    font-size: 25px;
+}
+.flagPlusCountry{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.flagPlusCountry img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+}
+.countryList{
+    width: 250px;
+    height: 200px;
+    padding: 3px 10px;
+    overflow-y: scroll;
+    background: transparent;
+    border: 1px solid #ccc;
+    display: none;
+}
+.showDropdown{
+    display: block;
+}
+.listedCountry{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.listCountry{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.listCountry img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
+.regestrationForm{
+    background-color: var(--white-color);
+}
+.signupForm input{
+    width: 250px;
+    height: 35px;
+    outline: none;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    background: transparent;
+}
+.signupForm input:hover{
+    border: 1px solid var(--primary-color);
+}
+.username,
+.password,
+.confirmPassword,
+.mobileNumber,
+.inviteCode{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.formPassword,
+.countryPlusMobile,
+.mobileNumberInput{
+    display: flex;
+    gap: 10px;
+}
+.countrySection{
+    margin-top: 10px;
+}
+.mobileNumberInput select{
+    width: 150px;
+    height: 35px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+.mobileNumberInput select:hover{
+    border: 1px solid var(--primary-color);
+}
+.checkBox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.checkBox label,
+a{
+    font-size: 14px;
+}
+.checkBox input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+.checkBox input[type="checkbox"]:checked{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.checkBox input[type="checkbox"]:checked::after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.submitBtn{
+    position: absolute;
+    right: 50px;
+}
+.submitBtn button{
+    width: 250px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    background: var(--primary-color);
+}
+.submitBtn button:hover{
+    background-color: var(--hover-color);
+}
+.passwordPlusEyeBtn{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+.passwordPlusEyeBtn button{
+    border: none;
+    outline: none;
+    background: none;
+    padding-right: 3px;
+}
+.passwordPlusEyeBtn button i{
+    color: gray;
+}
+.passwordPlusEyeBtn input{
+    width: 235px;
+    border: none;
+}
+.passwordPlusEyeBtn input:hover{
+    border: none;
+}
+.passwordPlusEyeBtn:hover{
+    border: 1px solid var(--primary-color); 
+}
+.password-container {
+    position: relative;
+}
+#togglePassword{
+    position: absolute;
+    top: 75%;
+    right: 5px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+#togglePassword i{
+    font-size: 14px;
+    color: #555;
+}
+.RightSideForm{
+    width: 35%;
+    height: 100%;
+    margin-right: 50px;
+    background: url(Images/stadium.jpg);
+    background-size: cover;
+    position: relative;
+}
+.RightSideForm h1{
+    padding: 20px;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    background-color: #0000004f;
+}
