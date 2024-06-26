@@ -91,7 +91,11 @@ const matches = [
     { id: 9, teams: ["Team M", "Team N"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-27T12:00:00') },
     { id: 10, teams: ["Team O", "Team P"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-28T12:00:00') },
     { id: 11, teams: ["Team Q", "Team R"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-29T12:00:00') },
-    { id: 12, teams: ["Team S", "Team T"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-30T12:00:00') },
+    { id: 11, teams: ["Team Q", "Team R"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-30T12:00:00') },
+    { id: 12, teams: ["Team U", "Team V"], tournament: ["FIFA Cup"], startDate: new Date('2024-07-01T12:00:00') },
+    { id: 12, teams: ["Team W", "Team X"], tournament: ["FIFA Cup"], startDate: new Date('2024-07-02T12:00:00') },
+    { id: 12, teams: ["Team Y", "Team Z"], tournament: ["FIFA Cup"], startDate: new Date('2024-07-03T12:00:00') },
+
 ];
 
 // User balance
@@ -380,8 +384,7 @@ function displayProfit(betAmount, profitPercentage, profitedAmount) {
         <td>${profitPercentage}%</td>
         <td>${currentDate}</td>
         <td>${currentTime}</td>
-        <td>$${profitedAmount}</td>
-    `;
+        <td>$${profitedAmount}</td>`;
 
     // Append the new row to the table body
     const tableBody = profitTable.querySelector('tbody');
