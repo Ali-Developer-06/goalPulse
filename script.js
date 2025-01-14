@@ -79,24 +79,39 @@ function openAgentSection() {
     //* < ========== Menu Market Section script ========== -->
 
     // Sample match data with start times (replace with actual dynamic data)
-const matches = [
-    { id: 1, teams: ["Team A", "Team B"], tournament: ["Czech Republic Divize"], startDate: new Date('2024-06-21T12:00:00') },
-    { id: 2, teams: ["Team C", "Team D"], tournament: ["Australia FFA Cup"], startDate: new Date('2024-06-22T12:30:00') },
-    { id: 5, teams: ["Team CC", "Team DD"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-23T10:33:00') },
-    { id: 4, teams: ["Team AA", "Team BB"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-23T10:39:00') },
-    { id: 3, teams: ["Team E", "Team F"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-23T12:00:00') },
-    { id: 6, teams: ["Team G", "Team H"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-24T20:23:00') },
-    { id: 7, teams: ["Team I", "Team J"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-25T12:00:00') },
-    { id: 8, teams: ["Team K", "Team L"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-26T12:00:00') },
-    { id: 9, teams: ["Team M", "Team N"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-27T12:00:00') },
-    { id: 10, teams: ["Team O", "Team P"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-28T12:00:00') },
-    { id: 11, teams: ["Team Q", "Team R"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-29T12:00:00') },
-    { id: 11, teams: ["Team Q", "Team R"], tournament: ["FIFA Cup"], startDate: new Date('2024-06-30T12:00:00') },
-    { id: 12, teams: ["Team U", "Team V"], tournament: ["FIFA Cup"], startDate: new Date('2024-07-01T12:00:00') },
-    { id: 12, teams: ["Team W", "Team X"], tournament: ["FIFA Cup"], startDate: new Date('2024-07-02T12:00:00') },
-    { id: 12, teams: ["Team Y", "Team Z"], tournament: ["FIFA Cup"], startDate: new Date('2024-07-03T12:00:00') },
-
-];
+    const matches = [
+        { id: 1, teams: ["Manchester City FC", "Real Madrid CF"], image1: "Match/match 1.png", image2: "Match/match 2.png", tournament: ["UEFA European"], startDate: new Date('2024-07-29T08:30:00') },
+        { id: 2, teams: ["FC Barcelona", "Manchester United FC"], image1: "Match/match 3.png", image2: "Match/match 4.png", tournament: ["Copa América"], startDate: new Date('2024-07-29T09:30:00') },
+        { id: 3, teams: ["Liverpool FC", "Paris Saint-Germain"], image1: "Match/match 5.png", image2: "Match/match 6.png", tournament: ["F a Cup"], startDate: new Date('2024-07-29T09:30:00') },
+        { id: 4, teams: ["FC Bayern Munich", "Arsenal FC"], image1: "Match/match 7.png", image2: "Match/match 8.png", tournament: ["Africa Cup of Nations"], startDate: new Date('2024-07-29T10:00:00') },
+        { id: 5, teams: ["Tottenham Hotspur FC", "Chelsea FC"], image1: "Match/match 9.png", image2: "Match/match 10.png", tournament: ["FIFA World Cup"], startDate: new Date('2024-07-29T10:30:00') },
+        { id: 6, teams: ["Juventus FC", "Club Atletico de Madrid"], image1: "Match/match 11.png", image2: "Match/match 12.jpg", tournament: ["UEFA Europa League"], startDate: new Date('2024-07-29T11:00:00') },
+        { id: 7, teams: ["Borussia Dortmund", "FC Internazionale Milano"], image1: "Match/match 13.png", image2: "Match/match 14.png", tournament: ["English Premier League"], startDate: new Date('2024-07-29T12:00:00') },
+        { id: 8, teams: ["AC Milan", "Atletico Petro Luanda"], image1: "Match/match 15.png", image2: "Match/match 16.png", tournament: ["Asian Cup"], startDate: new Date('2024-07-29T11:30:00') },
+        { id: 9, teams: ["West Ham United FC", "Newcastle United FC"], image1: "Match/match 18.png", image2: "Match/match 1.png", tournament: ["Conmebol"], startDate: new Date('2024-07-29T12:00:00') },
+        { id: 10, teams: ["SSC Napoli", "RasenBallsport Leipzig"], image1: "Match/match 19.png", image2: "Match/match 20.png", tournament: ["Copa Castell"], startDate: new Date('2024-07-29T12:00:00') },
+        { id: 11, teams: ["Aston Villa FC", "AS Roma"], image1: "Match/match 21.png", image2: "Match/match 22.png", tournament: ["Aaha Gold Cup"], startDate: new Date('2024-07-29T12:00:00') },
+        { id: 12, teams: ["Eintracht Frankfurt", "Everton FC"], image1: "Match/match 23.png", image2: "Match/match 24.png", tournament: ["Afc"], startDate: new Date('2024-07-29T12:00:00') },
+        { id: 13, teams: ["Bayer 04 Leverkusen", "Sevilla FC"], image1: "Match/match 25.png", image2: "Match/match 26.png", tournament: ["Caf"], startDate: new Date('2024-07-29T12:15:00') },
+        { id: 14, teams: ["Brighton & Hove Albion FC", "Leicester City"], image1: "Match/match 27.png", image2: "Match/match 28.png", tournament: ["Concacaf"], startDate: new Date('2024-07-29T12:30:00') },
+        { id: 15, teams: ["Olympique De Marseille", "Crystal Palace"], image1: "Match/match 29.png", image2: "Match/match 30.png", tournament: ["Confederations Cup"], startDate: new Date('2024-07-29T12:45:00') },
+        { id: 16, teams: ["AFC Ajax", "Olympique Lyonnais"], image1: "Match/match 31.png", image2: "Match/match 32.png", tournament: ["Ofc"], startDate: new Date('2024-07-29T12:45:00') },
+        { id: 17, teams: ["Wolverhampton Wanderers FC", "Leeds United"], image1: "Match/match 33.png", image2: "Match/match 34.png", tournament: ["The Summer Olympics"], startDate: new Date('2024-07-29T13:00:00') },
+        { id: 18, teams: ["Real Betis", "Borussia Monchengladbach"], image1: "Match/match 35.png", image2: "Match/match 36.png", tournament: ["The Summer Olympics"], startDate: new Date('2024-07-29T13:00:00') },
+        { id: 19, teams: ["Villarreal CF", "Real Sociedad"], image1: "Match/match 37.png", image2: "Match/match 38.png", tournament: ["English Premier League"], startDate: new Date('2024-07-29T13:30:00') },
+        { id: 20, teams: ["VfL Wolfsburg", "1.FC Koln"], image1: "Match/match 39.png", image2: "Match/match 40.png", tournament: ["English Premier League"], startDate: new Date('2024-07-29T14:00:00') },
+        { id: 21, teams: ["SC Freiburg", "SL Benfica"], image1: "Match/match 41.png", image2: "Match/match 42.png", tournament: ["FIFA Cup"], startDate: new Date('2024-07-29T14:30:00') },
+        { id: 22, teams: ["Celtic FC", "Brentford"], image1: "Match/match 43.png", image2: "Match/match 44.png", tournament: ["UEFA Europa League"], startDate: new Date('2024-07-29T15:00:00') },
+        { id: 23, teams: ["Athletic de Bilbao", "SS Lazio SpA"], image1: "Match/match 45.png", image2: "Match/match 46.png", tournament: ["English Premier League"], startDate: new Date('2024-07-29T15:30:00') },
+        { id: 24, teams: ["1.FC Union Berlin", "Valencia CF"], image1: "Match/match 47.png", image2: "Match/match 48.jpg", tournament: ["FIFA Cup"], startDate: new Date('2024-07-29T16:00:00') },
+        { id: 25, teams: ["FC Porto", "Fulham FC"], image1: "Match/match 49.png", image2: "Match/match 50.png", tournament: ["UEFA Europa League"], startDate: new Date('2024-07-29T16:30:00') },
+    ];
+    
+    const today = new Date();
+    matches.forEach(match => {
+        const time = match.startDate.toTimeString().split(" ")[0]; // Extract the time portion
+        match.startDate = new Date(`${today.toISOString().split('T')[0]}T${time}`); // Combine today's date with the time
+    });
 
 // User balance
 const userBalance = 100000; // Example user balance
@@ -171,7 +186,7 @@ function displayMatches(matches, filter) {
                         <div class="menuListMatchBottomTeams">
                             <div class="menuListMatchImgPlusTeam1">
                                 <div class="menuListMatchImg">
-                                    <img src="Images/image.jpg" alt="">
+                                    <img src="${match.image1}" alt="">
                                 </div>
                                 <div class="menuListMatchTeam">
                                     <p>${match.teams[0]}</p>
@@ -183,7 +198,7 @@ function displayMatches(matches, filter) {
                                     <p>${match.teams[1]}</p>
                                 </div>
                                 <div class="menuListMatchImg">
-                                    <img src="Images/image.jpg" alt="">
+                                    <img src="${match.image2}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -238,7 +253,7 @@ function openBetDetailsPopup(matchId) {
     `;
 
     projectedScores.forEach(score => {
-        const profitPercentage = (Math.random() * (5 - 1) + 1).toFixed(1); // Random profit percentage (1.0-5.0)
+        const profitPercentage = (Math.random() * (2 - 1) + 1).toFixed(1); // Random profit percentage (1.0-5.0)
         const availableVolume = Math.floor(Math.random() * 1000) + 500; // Random volume available (500-1500)
 
         tableHTML += `
@@ -481,6 +496,15 @@ filterMatches('all');
         updateProgressBar('trade', userTrades, totalTradeLimit);
     });
 
+
+    //* < ========== Dollar Conversion script ========== -->
+
+    function convertToPKR() {
+        const usdAmount = document.getElementById('usdAmount').value;
+        const conversionRate = 290;
+        const pkrAmount = usdAmount * conversionRate;
+        document.getElementById('result').textContent = `$${usdAmount} USD is equal to ${pkrAmount} PKR`;
+    }
 
     //* < ========== Promotion Section script ========== -->
 

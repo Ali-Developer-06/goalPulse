@@ -208,6 +208,9 @@ body{
     height: 450px;
     object-fit: cover;
 }
+.menuListImg .mobImage{
+    display: none;
+}
 .movingText{
     width: 100%;
     height: 40px;
@@ -217,7 +220,7 @@ body{
     overflow: hidden;
     position: relative;
     margin: 10px 0;
-    background-color: #7E8693;
+    background-color: var(--primary-color);
 }
 .movingText i{
     z-index: 1;
@@ -229,7 +232,7 @@ body{
     justify-content: center;
     position: absolute;
     left: 0;
-    background-color: #7E8693;
+    background-color: var(--primary-color);
 }
 #moving-text{
     position: absolute;
@@ -892,6 +895,39 @@ th{
 .rechargeUserBlance h5{
     margin: 0;
 }
+.converter{
+    width: 350px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.converter input{
+    width: 200px;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+.converter button{
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 5px 20px;
+    background-color: var(--primary-color);
+}
+.converter button:hover{
+    background-color: var(--primary-color);
+}
+.converter p{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
 .rechargeNav{
     margin-bottom: 20px;
 }
@@ -940,6 +976,10 @@ th{
     display: flex;
     align-items: center;
     position: relative;
+}
+#financeId{
+    font-size: 10.5px;
+    font-weight: bold;
 }
 .formGroup input[type="text"],
 .formGroup input[type="file"]{
@@ -1399,7 +1439,17 @@ footer{
         display: none;
     }
 
-    /*? < === Main Body === --> */
+    /* ? < === Menu List === --> */
+
+    .menuListImg .mobImage{
+        display: block;
+        height: 100vh;
+    }
+    .menuListImg .PCImage{
+        display: none;
+    }
+
+    /* ? < === Main Body === --> */
 
     .mainBody{
         margin: 0;
@@ -1431,7 +1481,8 @@ footer{
     }
     .menuItem h4,
     .menuItem h5{
-        display: none;
+        font-size: 8px;
+        text-align: center;
     }
 
     /*? menu list */
@@ -1597,7 +1648,25 @@ footer{
         padding: 5px;
     }
     .rechargeBtnsPlusUserBlnce{
-        padding: 10px 0 20px;
+        padding: 10px 0 200px;
+        position: relative;
+    }
+    .converter{
+        width: 300px;
+        position: absolute;
+        top: 60%; left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .converter input{
+        width: 90%;
+    }
+    .converter button{
+        width: 80%;
+    }
+    .converter p{
+        font-size: 14px;
+        font-weight: bold;
+        padding-top: 10px;
     }
     .rechargeNav{
         margin: 0;
